@@ -1,9 +1,13 @@
 // 1) Importar librerías
 const express = require('express');
 const axios = require('axios');
+const cors = require('cors');
 
 // 2) Crear la app de Express
 const app = express();
+// Habilitar CORS
+app.use(cors());
+
 const PORT = 3000;
 
 // 3) Endpoint de prueba (health check)
