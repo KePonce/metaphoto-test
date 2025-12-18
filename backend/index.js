@@ -8,7 +8,7 @@ const app = express();
 // Habilitar CORS
 app.use(cors());
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // 3) Endpoint de prueba (health check)
 app.get('/health', (req, res) => {
