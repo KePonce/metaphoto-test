@@ -74,7 +74,7 @@ function App() {
 
   return (
     <div style={{ padding: 16, fontFamily: "Arial" }}>
-      <h2>MetaPhoto MVP (SPA)</h2>
+      <h2>MetaPhoto MVP (SPA) prueba 1</h2>
 
       <div style={{ display: "grid", gap: 8, maxWidth: 700 }}>
         <label>
