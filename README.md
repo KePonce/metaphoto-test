@@ -217,3 +217,13 @@ METAPOTO-TEST/
 
 This project prioritizes the correct implementation of API requirements such as data enrichment,
 filtering, and pagination over UI design or performance optimizations.
+
+For the extra points the tools used:
+
+- Frontend -> Vercel -> https://metaphoto-test.vercel.app
+
+- Backend -> Render -> https://metaphoto-test.onrender.com/health
+
+CI/CD is working for both cloud providers, based on the commits done to the repository
+
+
