@@ -4,8 +4,8 @@ This repository contains the solution for the MetaPhoto Software Developer Techn
 The objective of this project is to build an external API that enriches photo data with album and
 user information, reducing the number of API calls required by client applications.
 
-The solution is implemented using Node.js and Express, following the requirements provided in
-the technical test document.
+The solution is implemented using Node.js, Express, and React, following the requirements
+provided in the technical test document.
 
 ---
 
@@ -27,12 +27,13 @@ filtering and pagination.
 - Node.js (LTS)
 - Express.js
 - Axios
+- React
 - JavaScript
 - npm
 
 ---
 
-## Setup Instructions (Backend)
+## Setup Instructions – Backend
 
 ### Prerequisites
 
@@ -50,7 +51,7 @@ npm -v
 
 ---
 
-### Install Dependencies
+### Install Backend Dependencies
 
 From the root of the repository, navigate to the backend folder and install dependencies:
 
@@ -59,11 +60,9 @@ cd backend
 npm install
 ```
 
-This will install all required packages defined in `package.json`.
-
 ---
 
-### Run the Server
+### Run the Backend Server
 
 Start the backend server with:
 
@@ -79,15 +78,13 @@ API running on http://localhost:3000
 
 ---
 
-## Available Endpoints
+## Available Backend Endpoints
 
 ### Health Check
 
 ```
 GET /health
 ```
-
-Returns a simple response to verify that the API is running.
 
 Example:
 ```
@@ -102,8 +99,6 @@ http://localhost:3000/health
 GET /externalapi/photos/:id
 ```
 
-Returns a single photo enriched with its album and user information.
-
 Example:
 ```
 http://localhost:3000/externalapi/photos/1
@@ -116,8 +111,6 @@ http://localhost:3000/externalapi/photos/1
 ```
 GET /externalapi/photos
 ```
-
-Returns a list of enriched photos.
 
 #### Supported Filters (Query Parameters)
 
@@ -132,7 +125,7 @@ Returns a list of enriched photos.
 
 ---
 
-## Example Requests
+## Example Backend Requests
 
 ```text
 /externalapi/photos?title=repudiandae iusto
@@ -141,6 +134,56 @@ Returns a list of enriched photos.
 /externalapi/photos?album.title=quidem&title=repudiandae iusto
 /externalapi/photos?album.title=quidem&limit=10&offset=50
 ```
+
+---
+
+## Part 2 – Frontend SPA (React)
+
+The frontend is a simple Single Page Application (SPA) built with React.
+It consumes the backend API and allows users to:
+
+- View enriched photos (photo + album + user)
+- Apply filters
+- Navigate results using pagination
+
+---
+
+### Install Frontend Dependencies
+
+From the root of the repository:
+
+```bash
+cd frontend
+npm install
+```
+
+---
+
+### Run the Frontend
+
+Start the React application with:
+
+```bash
+npm start
+```
+
+If port `3000` is already in use by the backend, React will ask to run on another port.
+Accept the prompt by typing `Y`.
+
+The frontend will run on a port such as:
+
+```
+http://localhost:3001
+```
+
+---
+
+### Backend + Frontend Integration
+
+- Backend runs on: `http://localhost:3000`
+- Frontend runs on: `http://localhost:3001`
+
+Make sure the backend server is running before using the frontend SPA.
 
 ---
 
@@ -155,6 +198,10 @@ METAPOTO-TEST/
 │   ├── package-lock.json
 │   └── node_modules/
 └── frontend/
+    ├── src/
+    ├── public/
+    ├── package.json
+    └── node_modules/
 ```
 
 ---
@@ -162,7 +209,7 @@ METAPOTO-TEST/
 ## Status
 
 - Part 1 – Backend API: Completed
-- Part 2 – Frontend SPA: Pending
+- Part 2 – Frontend SPA: Completed
 
 ---
 
