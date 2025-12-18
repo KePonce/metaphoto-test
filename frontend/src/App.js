@@ -23,7 +23,9 @@ function App() {
     if (albumTitle.trim()) params.set("album.title", albumTitle.trim());
     if (email.trim()) params.set("album.user.email", email.trim());
 
-    return `http://localhost:3000/externalapi/photos?${params.toString()}`;
+    const baseUrl = process.env.REACT_APP_API_BASE_URL || "http://localhost:3000";
+    return `${baseUrl}/externalapi/photos?${params.toString()}`;
+
   };
 
   const fetchPhotos = async () => {
